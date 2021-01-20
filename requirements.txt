@@ -1,2 +1,2 @@
-speedcord==0.1.85
+speedcord==0.3.113
 pymongo~=3.11.2
