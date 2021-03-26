@@ -55,6 +55,11 @@ async def on_message(message, shard):
             return await ctx.send(content="Bot is already added")
 
         await ctx.send(content=f"Ok! Created bot. Token: ||{secret_key}||")
+    elif command == "removebot":
+        bot_id = int(args[0])
+        bot_data_table.delete_one({"_id": bot_id})
+        bot_tokens_table.delete_one({"_id": bot_id})
+        await ctx.send(content="Ok.")
 
 
 client.token = env["TOKEN"]
